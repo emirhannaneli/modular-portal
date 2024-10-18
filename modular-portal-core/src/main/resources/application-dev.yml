@@ -1,0 +1,85 @@
+server:
+  address: 0.0.0.0
+  port: 5001
+  http2:
+    enabled: true
+
+spring:
+  application:
+    name: modular-portal
+  messages:
+    basename: i18n/messages
+    cache-duration: PT1S
+    fallback-to-system-locale: false
+    encoding: UTF-8
+    use-code-as-default-message: true
+  data:
+    mongodb:
+      database: modular-portal
+      auto-index-creation: true
+      authentication-database: admin
+      username: root
+      password: root
+      uri: mongodb://root:root@local.emirman.dev:27017/modular-portal?authSource=admin
+      gridfs:
+        database: modular-portal
+  datasource:
+    url: jdbc:postgresql://local.emirman.dev:5432/modular-portal
+    username: root
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+
+springdoc:
+  api-docs:
+    path: /v1/docs
+  swagger-ui:
+    path: /v1/docs/ui
+    operations-sorter: method
+    tags-sorter: alpha
+
+logging:
+  level:
+    org.springframework.security: DEBUG
+
+lubble:
+  exception-handling: true
+  security:
+    cookie:
+      prefix: _mp-
+  oauth2:
+    google:
+      client-id: 1234567890.apps.googleusercontent.com
+      client-secret: secret
+      issuers:
+        - accounts.google.com
+        - https://accounts.google.com
+
+app:
+  name: modular-portal
+  version: 1.0.0
+  description: Modular Portal
+  security:
+    registration-enabled: true
+    public-apis:
+      - path: /v1/auth/sign-in
+        method: POST
+      - path: /v1/auth/sign-up
+        method: POST
+      - path: /v1/auth/oauth2/google
+        method: POST
+      - path: /error/**
+        method: GET
+      - path: /v1/docs/**
+        method: GET
+  jwt:
+    secret: secret
+    issuer: modular-portal
+    expiration: 24h
+    audience:
+      - modular-portal
+      - modular-portal-admin
+

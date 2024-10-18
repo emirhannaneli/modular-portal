@@ -1,0 +1,7 @@
+main: dev.emirman.mp.addon.stock.tracking.Addon
+name: StockTracking
+version: 1.0.0
+author: Emirman
+description: This addon provides stock tracking for dealer portal.
+depend:
+  - Notifier

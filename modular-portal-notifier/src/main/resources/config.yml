@@ -1,0 +1,5 @@
+main: dev.emirman.mp.addon.notifier.Addon
+name: Notifier
+version: 1.0.1
+author: Emirman
+description: This addon is for sending notifications to customers and authorities.

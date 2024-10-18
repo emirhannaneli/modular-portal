@@ -1,0 +1,29 @@
+mail:
+  smtp:
+    host: smtp.gmail.com # SMTP server address
+    port: 587 # SMTP server port
+    username: example@gmail.com # SMTP server username
+    password: example # SMTP server password
+  from: example@gmail.com # Email address to send from
+  templates:
+    - name: New Order Alert! # Template name (unique)
+      subject: New order received # Email subject
+      htmlFile: example.html # Path to HTML file in templates directory
+
+pushNotifications:
+  oneSignal:
+    appId: example # OneSignal app ID
+    apiKey: example # OneSignal API key
+  templates:
+    - name: New Order Alert! # Template name (unique)
+      title: New order received # Push notification title
+      message: You have received a new order # Push notification message
+
+sms:
+  twilio:
+    accountSid: example # Twilio account SID
+    authToken: example # Twilio auth token
+    from: +1234567890 # Twilio phone number to send from
+  templates:
+    - name: New Order Alert! # Template name (unique)
+      message: You have received a new order # SMS message

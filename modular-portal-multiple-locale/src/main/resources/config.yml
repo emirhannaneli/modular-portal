@@ -1,0 +1,5 @@
+main: dev.emirman.mp.addon.multiple.locale.Addon
+name: MultipleLocale
+version: 0.0.1-SNAPSHOT
+author: Emirman
+description: This addon provides multiple locale support for the application.

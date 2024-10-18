@@ -1,0 +1,32 @@
+addresses:
+  - notify@example.com # Email address for email notifications
+
+numbers:
+  - +905555555555 # Phone number for SMS notifications
+
+users:
+  - user@example.com # User ID or Email for push notifications
+
+stocks:
+  - id: 12345678901 # Stock ID
+    min: # Minimum stock to notify
+      value: 1 # Value to notify.
+      notification:
+        enabled: true # Enable or disable the notification
+        template: Min Stock Alert! # Notification template
+        types: # Notification types | EMAIL, SMS, PUSH
+          - EMAIL
+        remind:
+          enabled: true # Enable or disable the reminder
+          interval: 1 # Reminder interval in days
+    max: # Maximum stock to notify
+      value: 10 # Value to notify
+      notification:
+        enabled: true # Enable or disable the notification
+        template: Min Stock Alert! # Notification template
+        types: # Notification types | EMAIL, SMS, PUSH
+          - EMAIL
+        remind:
+          enabled: true # Enable or disable the reminder
+          interval: 1 # Reminder interval in days
+
